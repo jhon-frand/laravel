@@ -4,16 +4,18 @@
 CREAR PUBLICACIÓN
 @endsection
 
+<link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
+
 @section('contenido')
 <div class="md:flex md:justify-center">
     <div class="md:w-6/12 px-10">
-        <form action="" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center itemns-center" >
-
+        <form action="{{route('imagenes.store')}}" enctype="multipart/form-data"  id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center" >
+            @csrf
         </form>
     </div>
-         <div class="md:w-6/12 mr-10 flex justify-center items-center">
+         {{-- <div class="md:w-6/12 mr-10 flex justify-center items-center">
          IMagen Aquí
-         </div>
+         </div> --}}
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
             <form action="{{route('register')}}" method="post" novalidate>
                 @csrf
@@ -42,7 +44,7 @@ CREAR PUBLICACIÓN
                     @enderror
                 </div>
 
-                <input type="submit" value="Publicar" class="bg-red-500 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 rounded-lg">
+                <input type="submit" value="Publicar" class="bg-sky-500 hover:bg-sky-700 transition-colors text-white mt-3 cursor-pointer uppercase font-bold w-full p-3 rounded-lg">
             </form>
         </div>
     </div>
