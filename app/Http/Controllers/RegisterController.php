@@ -16,7 +16,7 @@ class RegisterController extends Controller
     }
 
     public function listar(){
-        
+
         $users = User::all();
         return view('welcome', compact('users'));
     }
@@ -53,8 +53,8 @@ class RegisterController extends Controller
         //20/10/2023 AUTENTICACIONES
 
         //redireccionar
-        // return redirect('/');
-        return redirect()->route('post.index');
+        return redirect('/');
+       // return redirect()->route('post.index');
 }
 
     /**
