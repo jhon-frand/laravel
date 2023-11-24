@@ -35,7 +35,8 @@
                 </svg>
 
                 CREAR</a>
-                <a class="font-bold uppercase text-white" href="{{route('post.index', auth()->user()->username)}}">Hola, <span class="font-bold">{{ auth()->user()->username}}</span></a>
+                <a class="font-bold uppercase text-white" href="{{route('post.index', auth()->user()->username)}}">
+                    Hola, <span class="font-bold">{{ auth()->user()->username}}</span></a>
 
                 <form action="{{ route('logout') }}" method="POST">
                 @csrf

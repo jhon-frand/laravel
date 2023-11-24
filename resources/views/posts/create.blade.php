@@ -2,6 +2,7 @@
 
 @section('titulo')
 CREAR PUBLICACIÓN
+
 @endsection
 
 <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
@@ -13,25 +14,15 @@ CREAR PUBLICACIÓN
             @csrf
         </form>
     </div>
-         {{-- <div class="md:w-6/12 mr-10 flex justify-center items-center">
-         IMagen Aquí
-         </div> --}}
+
         <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
-            <form action="{{route('register')}}" method="post" novalidate>
+            <form action="{{route('posts.store')}}" method="post" novalidate>
                 @csrf
-                <div>
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" name="name" placeholder="Nombre" class="border p-3 w-full rounded-lg
-                    @error('name') border-red-500 @enderror " value="{{ old('name')}}">
-                    @error('name')
-                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
-                </div>
                 <div>
                 <label for="titulo">Título</label>
                     <input type="text" id="titulo" name="titulo" placeholder="titulo" class="border p-3 w-full rounded-lg
                     @error('titulo') border-red-500 @enderror " value="{{ old('titulo')}}">
-                    @error('name')
+                    @error('titulo')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
@@ -39,7 +30,14 @@ CREAR PUBLICACIÓN
                 <label for="descripcion">descripción</label>
                     <input type="text" id="descripcion" name="descripcion" placeholder="descripcion" class="border p-3 w-full rounded-lg
                     @error('descripcion') border-red-500 @enderror " value="{{ old('descripcion')}}">
-                    @error('name')
+                    @error('descripcion')
+                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="mb-5">
+                    <input type="hidden" name="imagen" value="{{ old('imagen') }}">
+                    @error('imagen')
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
